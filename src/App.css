@@ -1,3 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +85,221 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.link1, .link2, .order-pizza{
+  background-color: white;
+  color: black;
+  padding: 3px;
+  text-decoration: none;
+  border: 1px solid black;
+  float: right;
+  margin-top: 20px;
+  }
+  a:hover {
+  background-color: black;
+  color: white;
+}
+
+.order-pizza{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+}
+
+h2{
+  text-align:start;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+h3{
+  background-color: white;
+  font-size: 1.5em;
+  color: black;
+  padding: 20px;
+  border: 1px solid black;
+  margin-top: 0%;
+  text-align:center;
+  margin-top: 5%;
+  margin-left: 18.5%;
+  margin-right: 18.5%;
+ 
+}
+
+.cta{
+  display:flex;
+  position: relative;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.cta2{
+  display:flex;
+  position: relative;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.ctaText{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size:1.5em;
+  color:white;
+}
+
+.pizza{
+  width: 1200PX;
+  height: 400px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px 2px rgb(128, 127, 127);
+}
+
+.pizza2{
+  width: 1200PX;
+  height: 600px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px 2px rgb(128, 127, 127);
+}
+
+.homeContent{
+  display:flex;
+  flex-wrap: wrap;
+  margin-left: 275px;
+}
+
+.top{
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px 2px rgb(128, 127, 127);
+  height: 15em;
+  width:15em;
+  margin: 80px;
+}
+
+.size, .sauce, .sub, .instructions{
+  display: flex;
+  flex-direction: column;
+  padding-left: 350px;
+  width: 600px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+
+.on
+{
+  display: none;
+}
+
+.on, .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;}
+.toppings{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 350px;
+  margin-top: 10px;
+}
+
+
+.check{
+  width: 600px;
+  height: 50px;
+}
+
+p{
+  margin-left: 90px;
+  width: 300px;
+}
+
+h4{
+  margin-left: 350px;
+  padding-top: 50px;
+}
+
+h5{
+  margin-left: 350px;
+}
+
+button{
+  margin-left: 90px;
+  align-items: center;
+}
+.submit{
+  margin-left: 50%;
 }
