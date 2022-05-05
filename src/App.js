@@ -42,8 +42,7 @@ const App = () => {
   const [disabled, setDisabled] = useState(true);
 
   const handleSubmit = () => {
-    alert("hi")
-    axios.post("https://reqres.in/api/users", formValues)
+    axios.post("https://reqres.in/api/orders", formValues)
       .then(res => {
         setOrder([res.data, ...order]);
       })

@@ -73,7 +73,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
 
             <form id = "pizza-form" onSubmit={onSubmit}>
             <h5>Name</h5>
-            <input onChange = {nameChange} value = {formValues.name}/>
+            <input id = "name-input" onChange = {nameChange} value = {formValues.name}/>
             {errors.name && <div>
                 {errors.name}
             </div>}
@@ -83,7 +83,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                 {errors["size-dropdown"]}
             </div>}
                 <div className="size">
-                    <select
+                    <select id = "size-dropdown"
                         onChange={sizeChange}
                         value = {formValues["size-dropdown"]}
                         name='size-dropdown'>
@@ -275,7 +275,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                 </div>
                 <div className="instructions">
                     <label>Special Instructions
-                        <input
+                        <input id = "special-text"
                             onChange={specialInstructionsChange}
                             name='username'
                             type='text'
@@ -283,7 +283,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         />
                     </label>
                 </div>
-            <button className="submit" disabled = {disabled} >Add to Order</button>
+            <button id = "order-button" className="submit" disabled = {disabled} >Add to Order</button>
             </form>
         </>
     );
