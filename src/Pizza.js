@@ -82,7 +82,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                 {errors["size-dropdown"] && <div>
                 {errors["size-dropdown"]}
             </div>}
-                <div className="size">
+                <div className="size-dropdown">
                     <select id = "size-dropdown"
                         onChange={sizeChange}
                         value = {formValues["size-dropdown"]}
@@ -100,7 +100,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                 {errors.sauce}
             </div>}
                 <div className="sauce">
-                    <div>
+                    <div className = "sauce1">
                         <input
                             type="radio"
                             name="sauce"
@@ -111,7 +111,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <label>Original Red</label>
                     </div>
 
-                    <div>
+                    <div className = "sauce2">
                         <input
                             type="radio"
                             name="sauce"
@@ -122,7 +122,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <label>Garlic Ranch</label>
                     </div>
 
-                    <div>
+                    <div className = "sauce3">
                         <input
                             type="radio"
                             name="sauce"
@@ -133,7 +133,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <label>BBQ Sauce</label>
                     </div>
 
-                    <div>
+                    <div className = "sauce4">
                         <input
                             type="radio"
                             name="sauce"
@@ -160,6 +160,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="sausage"
+                            checked = {formValues.sausage}
                             onChange={toppingsChange}
                         />
                         <label>Sausage</label>
@@ -168,6 +169,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="canadianBacon"
+                            checked = {formValues.canadianBacon}
                             onChange={toppingsChange}
                         />
                         <label>Canadian Bacon</label>
@@ -176,6 +178,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="spicyItalian"
+                            checked = {formValues.spicyItalian}
                             onChange={toppingsChange}
                         />
                         <label>Spicy Italian Sausage</label>
@@ -184,6 +187,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="grilledChicken"
+                            checked = {formValues.grilledChicken}
                             onChange={toppingsChange}
                         />
                         <label>Grilled Chicken</label>
@@ -192,6 +196,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="onions"
+                            checked = {formValues.onions}
                             onChange={toppingsChange}
                         />
                         <label>Onions</label>
@@ -200,6 +205,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="greenPepper"
+                            checked = {formValues.greenPepper}
                             onChange={toppingsChange}
                         />
                         <label>Green Pepper</label>
@@ -208,6 +214,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="dicedTomatoes"
+                            checked = {formValues.dicedTomatoes}
                             onChange={toppingsChange}
                         />
                         <label>Diced Tomatoes</label>
@@ -216,6 +223,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="blackOlives"
+                            checked = {formValues.blackOlives}
                             onChange={toppingsChange}
                         />
                         <label>Black Olives</label>
@@ -224,6 +232,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="roastedGarlic"
+                            checked = {formValues.roastedGarlic}
                             onChange={toppingsChange}
                         />
                         <label>Roasted Garlic</label>
@@ -232,6 +241,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="artichoke"
+                            checked = {formValues.artichoke}
                             onChange={toppingsChange}
                         />
                         <label>Artichoke Hearts</label>
@@ -240,6 +250,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="threeCheese"
+                            checked = {formValues.threeCheese}
                             onChange={toppingsChange}
                         />
                         <label>Three Cheese</label>
@@ -248,6 +259,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="pineapple"
+                            checked = {formValues.pineapple}
                             onChange={toppingsChange}
                         />
                         <label>Pineapple</label>
@@ -256,6 +268,7 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                         <input
                             type="checkbox"
                             name="extraCheese"
+                            checked = {formValues.extraCheese}
                             onChange={toppingsChange}
                         />
                         <label>Extra Cheese</label>
@@ -264,20 +277,20 @@ export default function Pizza({formValues, inputChange, handleSubmit, errors, di
                 <h5>Choice of Substitute</h5>
                 <h5>Choose up to 1</h5>
                 <div className="sub">
-                    <label className="switch">
+                    {/* <label className="switch">
                         <input type="checkbox" id="togBtn" />
                         <div className="slider round">
                             <span className="on"></span>
                             <span className="off"></span>
                         </div>
                         <p>Gluten Free Crust (+ $1.00)</p>
-                    </label>
+                    </label> */}
                 </div>
                 <div className="instructions">
                     <label>Special Instructions
                         <input id = "special-text"
                             onChange={specialInstructionsChange}
-                            name='username'
+                            name='special'
                             type='text'
                             placeholder="Anything else you'd like to add?"
                         />

@@ -25,10 +25,10 @@ export default function Home() {
             />
             <div className = "ctaText">Your Favorite Food Delivered While Coding</div>
             <div>
-                <Link className = "order-pizza" to="/pizza"><span id = "order-pizza">Pizza?</span></Link>        
+                <Link id = "order-pizza" className = "order-pizza" to="/pizza"><span id = "order-pizza">Pizza?</span></Link>        
             </div>
             <Routes>
-                <Route path="/pizza" element = {<Pizza/>}/>
+                <Route  id = "order-pizza" path="/pizza" element = {<Pizza/>}/>
             </Routes>
         </div>
         <h4>Food Delivery in Gotham City</h4>

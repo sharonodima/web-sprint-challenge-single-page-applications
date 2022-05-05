@@ -3,17 +3,27 @@ describe ("Pizza App", () => {
         cy.visit("http://localhost:3000/pizza")
     })
     const nameInput = () => cy.get("input[id='name-input']");
-    const sizeInput = () => cy.get("input[type='checkbox']");
-    const sauceInput = () => cy.get("input[type='checkbox']");
-    const toppingInput = () => cy.get("select[name='toppings']");
+    const sizeInput1 = () => cy.get('select').select(1);
+    const sizeInput2 = () => cy.get('select').select(2);
+    const sizeInput3 = () => cy.get('select').select(3);
+    const sauce1 = () => cy.get("input[type='radio']").first().click();
+    const sauce2 = () => cy.get("input[value='Garlic']").click(2);
+    const sauce3 = () => cy.get("input[value='BBQ']").click(3);
+    const sauce4 = () => cy.get("input[value='Spinach Alfredo']").click(4);
+    const toppingInput = () => cy.get('input[type="checkbox"]').first().click()
     const specialInput = () => cy.get("input[id=special-text]");
     const orderBtn = () => cy.get("button");
 
 
     it("The proper elements are showing", () => {
         nameInput().should("exist");
-        sizeInput().should("exist");
-        sauceInput().should("exist")
+        sizeInput1().should("exist");
+        sizeInput2().should("exist");
+        sizeInput3().should("exist");
+        sauce1().should("exist");
+        sauce2().should("exist");
+        sauce3().should("exist");
+        sauce4().should("exist");
         toppingInput().should("exist");
         specialInput().should("exist");
         orderBtn().should("exist");
@@ -33,10 +43,14 @@ describe ("Pizza App", () => {
               .should("have.value", "")
               .type("Jane")
               .should("have.value", "Jane");
-            sizeInput()
-              .should("have.value", "on")
-              .type("on")
-              .should("have.value", "on");
+            sauce1()
+              .should("have.value", "Original")
+              .type("Original")
+              .should("have.value", "Original")
+            sizeInput1()
+              .should("have.value", "Small")
+              .type("Small")
+              .should("have.value", "Small");
             toppingInput()
               .should("have.value", "on")
               .type("on")
@@ -49,22 +63,25 @@ describe ("Pizza App", () => {
 
         it("The add to order button enables when all inputs and checkbox are filled out", () => {
             nameInput().type("Jane");
-            sizeInput().type("Doe");
-            toppingInput().type("johndoe@gmail.com");
-            specialInput().type("tyweirt");
-            registerBtn().should("not.be.disabled");
+            sauce1().type("on");
+            sizeInput1().type("on");
+            toppingInput().type("on");
+            specialInput().type("no sauce");
+            orderBtn().should("not.be.disabled");
         })
 
         it("The add to order button can reset the inputs and checkboxes then become disabled", () => {
-            nameInput().type("John");
-            sizeInput().type("Doe");
-            toppingInput().type("johndoe@gmail.com");
-            specialInput().type("tyweirt");
-            registerBtn().click();
+            nameInput().type("Jane");
+            sauce1().type("Original");
+            sizeInput1().type("on");
+            toppingInput().type("on");
+            specialInput().type("no sauce");
+            orderBtn().click();
             nameInput().should("have.value", "");
-            sizeInput().should("have.value", "");
+            sauce1().should("have.value", "Original")
+            sizeInput1().should("have.value", "Small");
             toppingInput().should("have.value", "on");
-            specialInput().should("have.value", "");
+            specialInput().should("have.value", "no sauce");
         })   
     })
 })
